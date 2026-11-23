@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Design tokens
+   ==========================================================================
+   The token layout follows shadcn/ui's convention (background / foreground /
+   card / muted / border / ring / radius), so the vocabulary is familiar and a
+   later port to a component library is a rename, not a rewrite.
+
+   No pure black and no pure white anywhere: the lightest surface is #FCFDFE
+   and the darkest ink is #16202E. Pure values on a screen read as harsh, and
+   the softer pair keeps long forms comfortable to read at a counter.
+   ========================================================================== */
+
+:root {
+  /* ---- neutrals: warm-cool slate, never #000 or #fff ------------------- */
+  --background:        #f4f7fb;
+  --background-deep:   #eaf0f8;
+  --surface:           #fcfdfe;
+  --surface-raised:    #ffffff;   /* used only under a shadow, never full-bleed */
+  --foreground:        #16202e;
+  --foreground-soft:   #33445c;
+  --muted:             #64748b;
+  --muted-foreground:  #7b8AA0;
+  --border:            #e3e9f2;
+  --border-strong:     #cfd8e6;
+  --input:             #dde5f0;
+
+  /* ---- brand: municipal blue ------------------------------------------- */
+  --primary:           #1d4ed8;
+  --primary-hover:     #1a45c0;
+  --primary-active:    #16389c;
+  --primary-dark:      #1e3a8a;
+  --primary-deep:      #16265c;
+  --primary-foreground:#f8fbff;
+  --primary-tint:      #eef4ff;
+  --primary-tint-2:    #dfeaff;
+  --primary-line:      #bcd3fb;
+  --ring:              #4f83f1;
+
+  /* ---- semantic --------------------------------------------------------- */
+  --success:           #16a34a;
+  --success-dark:      #15803d;
+  --success-tint:      #e6f9ed;
+  --success-line:      #9ce3b7;
+  --warning:           #d97706;
+  --warning-dark:      #b45309;
+  --warning-tint:      #fef4e2;
+  --warning-line:      #fbd99b;
+  --danger:            #c2410c;      /* the concern form's rust */
+  --danger-dark:       #9a3412;
+  --danger-tint:       #fdeee6;
+  --danger-line:       #f6c4a8;
+  --error:             #b3261e;
+  --error-tint:        #fdecea;
+  --error-line:        #f3b7b2;
+
+  /* ---- seal colours, pulled from the official artwork ------------------- */
+  --seal-red:          #d81f26;
+  --seal-yellow:       #ffdd00;
+  --seal-blue:         #1a1f71;
+  --seal-gold:         #c9a227;
+
+  /* ---- gradients -------------------------------------------------------- */
+  --grad-page:      linear-gradient(180deg, #f7fafd 0%, #eef4fc 42%, #e8f0fa 100%);
+  --grad-primary:   linear-gradient(135deg, #2563eb 0%, #1d4ed8 48%, #1b3fae 100%);
+  --grad-primary-2: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  --grad-header:    linear-gradient(120deg, #1d4ed8 0%, #1e3a8a 62%, #16265c 100%);
+  --grad-deep:      linear-gradient(135deg, #1e3a8a 0%, #16265c 100%);
+  --grad-success:   linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+  --grad-danger:    linear-gradient(135deg, #ea580c 0%, #9a3412 100%);
+  --grad-warm:      linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  --grad-footer:    linear-gradient(180deg, #1b2637 0%, #131c29 100%);
+  /* A wash used behind hero sections - soft, not a slab of colour. */
+  --grad-hero:      radial-gradient(1100px 420px at 12% -8%, rgba(59,130,246,.13), transparent 62%),
+                    radial-gradient(900px 380px at 88% 4%, rgba(22,163,74,.10), transparent 60%),
+                    radial-gradient(700px 300px at 50% 100%, rgba(217,119,6,.07), transparent 65%);
+  /* The landing hero: a deep municipal blue that the officials' portrait can
+     sink into. Lit from the upper left and again from below, so the middle of
+     the panel - where the portrait sits - stays the darkest part and the
+     headline reads cleanly over it. */
+  --grad-hero-deep: radial-gradient(120% 95% at 50% 118%, rgba(37,99,235,.60), transparent 72%),
+                    radial-gradient(85% 70% at 6% -12%, rgba(96,165,250,.42), transparent 66%),
+                    linear-gradient(155deg, #2148c9 0%, #1b3fae 44%, #16265c 100%);
+
+  /* ---- radii ------------------------------------------------------------ */
+  --radius:      0.875rem;   /* 14px - cards */
+  --radius-lg:   1.25rem;    /* 20px - hero panels */
+  --radius-md:   0.625rem;   /* 10px - inputs, buttons */
+  --radius-sm:   0.5rem;     /* 8px  - chips, small controls */
+  --radius-full: 999px;
+
+  /* ---- elevation: layered and low-contrast ------------------------------ */
+  --shadow-xs: 0 1px 2px rgba(22, 32, 46, .05);
+  --shadow-sm: 0 1px 2px rgba(22, 32, 46, .05), 0 2px 6px rgba(22, 32, 46, .045);
+  --shadow:    0 1px 2px rgba(22, 32, 46, .045), 0 6px 18px rgba(22, 32, 46, .06);
+  --shadow-md: 0 2px 4px rgba(22, 32, 46, .05), 0 12px 28px rgba(22, 32, 46, .08);
+  --shadow-lg: 0 4px 8px rgba(22, 32, 46, .05), 0 20px 48px rgba(22, 32, 46, .11);
+  --shadow-primary: 0 2px 6px rgba(29, 78, 216, .22), 0 10px 24px rgba(29, 78, 216, .20);
+  --shadow-success: 0 2px 6px rgba(22, 163, 74, .22), 0 10px 24px rgba(22, 163, 74, .20);
+  --shadow-danger:  0 2px 6px rgba(194, 65, 12, .22), 0 10px 24px rgba(194, 65, 12, .20);
+
+  /* ---- typography ------------------------------------------------------- */
+  --font-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-display: 'Manrope', 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-mono:    ui-monospace, SFMono-Regular, 'Cascadia Mono', Menlo, monospace;
+
+  /* ---- motion -----------------------------------------------------------
+     Curves are the strong ones - the CSS built-ins are too weak to read as
+     deliberate. Durations stay under 300ms for anything interactive. */
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);   /* slight overshoot, used sparingly */
+
+  --dur-press:  140ms;
+  --dur-hover:  180ms;
+  --dur-pop:    200ms;
+  --dur-panel:  240ms;
+  --dur-modal:  260ms;
+  --dur-reveal: 520ms;   /* scroll reveal only - marketing surfaces */
+
+  --wrap: 1180px;
+  /* Starting value only - ui.js measures the real header and overwrites this,
+     because the header is a different height on the kiosk, where the nav takes
+     a second row. Anything laid out against it must not rely on a constant. */
+  --header-h: 75px;
+}

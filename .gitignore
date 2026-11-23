@@ -1,0 +1,22 @@
+# Server-specific credentials - never commit these.
+includes/config.local.php
+
+# Local build/tooling noise
+node_modules/
+package-lock.json
+.DS_Store
+Thumbs.db
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Anything an admin uploads or exports at runtime
+uploads/
+tmp/
+*.sql.gz
+
+# Built upload package
+dist/
